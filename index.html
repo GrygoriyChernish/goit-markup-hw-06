@@ -65,7 +65,13 @@
           <br />
           для вашего бизнеса
         </h1>
-        <a href="" class="button link">Заказать услугу</a>
+        <button type="button" class="button" data-modal-open>Заказать услугу</button>
+        <div class="backDrop backDrop--hidden" data-modal>
+          <div class="modal">
+            <form action=""></form>
+            <button type="button" data-modal-close>Закрыть</button>
+          </div>
+        </div>
       </section>
       <!-- Секция "Преимущества" -->
       <section class="section">
@@ -454,5 +460,6 @@
       </div>
       <p class="copyright">2020 | Developed by GoIT Students</p>
     </footer>
+    <script src="./js/modal.js"></script>
   </body>
 </html>
