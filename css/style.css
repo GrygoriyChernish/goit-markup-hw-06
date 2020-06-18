@@ -679,7 +679,7 @@ img {
 
 .request__checkboxInput:checked + .request__checkboxIcon {
   border-color: var(--acсent-color);
-  background-image: url(./images/icon-check.svg);
+  background-image: url(../images/icon-check.svg);
   background-color: var(--acсent-color);
   background-size: contain;
   background-origin: border-box;
