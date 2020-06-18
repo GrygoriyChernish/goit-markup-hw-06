@@ -66,12 +66,6 @@
           для вашего бизнеса
         </h1>
         <button type="button" class="button" data-modal-open>Заказать услугу</button>
-        <div class="backDrop backDrop--hidden" data-modal>
-          <div class="modal">
-            <form action=""></form>
-            <button type="button" data-modal-close>Закрыть</button>
-          </div>
-        </div>
       </section>
       <!-- Секция "Преимущества" -->
       <section class="section">
@@ -171,13 +165,13 @@
             <li class="ourTeam__item">
               <img
                 src="./images/studio-images/our-team/John-Smith.jpg"
-                alt="Фото Джона Смита"
+                alt="Фото Николай Кучеренко"
                 class="ourTeam__image"
                 width="270"
                 height="260"
               />
               <div class="ourTeam__meta">
-                <h3 class="ourTeam__title">John Smith</h3>
+                <h3 class="ourTeam__title">Николай Кучеренко</h3>
                 <p class="ourTeam__text">Product Designer</p>
                 <ul class="socialNetwork list">
                   <li class="socialNetwork__item">
@@ -214,13 +208,13 @@
             <li class="ourTeam__item">
               <img
                 src="./images/studio-images/our-team/Marta-Stewart.jpg"
-                alt="Фото Марты Стюарт"
+                alt="Фото Ольга Иванова"
                 class="ourTeam__image"
                 width="270"
                 height="260"
               />
               <div class="ourTeam__meta">
-                <h3 class="ourTeam__title">Marta Stewart</h3>
+                <h3 class="ourTeam__title">Ольга Иванова</h3>
                 <p class="ourTeam__text">Frontend Developer</p>
                 <ul class="socialNetwork list">
                   <li class="socialNetwork__item">
@@ -257,13 +251,13 @@
             <li class="ourTeam__item">
               <img
                 src="./images/studio-images/our-team/Robert-Jakis.jpg"
-                alt="Фото Роберта Якиса"
+                alt="Фото Андрей Шевченко"
                 class="ourTeam__image"
                 width="270"
                 height="260"
               />
               <div class="ourTeam__meta">
-                <h3 class="ourTeam__title">Robert Jakis</h3>
+                <h3 class="ourTeam__title">Андрей Шевченко</h3>
                 <p class="ourTeam__text">Marketing</p>
                 <ul class="socialNetwork list">
                   <li class="socialNetwork__item">
@@ -300,13 +294,13 @@
             <li class="ourTeam__item">
               <img
                 src="./images/studio-images/our-team/Martin-Doe.jpg"
-                alt="Фото Мартина Доя"
+                alt="Фото Иван Николаев"
                 class="ourTeam__image"
                 width="270"
                 height="260"
               />
               <div class="ourTeam__meta">
-                <h3 class="ourTeam__title">Martin Doe</h3>
+                <h3 class="ourTeam__title">Иван Николаев</h3>
                 <p class="ourTeam__text">UI Designer</p>
                 <ul class="socialNetwork list">
                   <li class="socialNetwork__item">
@@ -458,8 +452,50 @@
           </form>
         </div>
       </div>
-      <p class="copyright">2020 | Developed by GoIT Students</p>
     </footer>
+    <div class="backDrop backDrop--hidden" data-modal>
+      <form class="request">
+        <b class="request__title">Оставьте свои данные, мы вам перезвоним</b>
+        <label class="request__field">
+          <input type="text" placeholder=" " class="request__input" name="name" />
+          <span class="request__label">Имя</span>
+          <svg width="18" height="18" class="request__icon">
+            <use href="./images/sprite.svg#name"></use>
+          </svg>
+        </label>
+        <label class="request__field">
+          <input type="number" placeholder=" " class="request__input" name="phone" />
+          <span class="request__label">Телефон</span>
+          <svg width="18" height="18" class="request__icon">
+            <use href="./images/sprite.svg#telephone"></use>
+          </svg>
+        </label>
+        <label class="request__field">
+          <input type="email" placeholder=" " class="request__input" name="email" />
+          <span class="request__label">Почта</span>
+          <svg width="18" height="18" class="request__icon">
+            <use href="./images/sprite.svg#email"></use>
+          </svg>
+        </label>
+        <label class="request__textareaField">
+          <textarea name="comment" class="request__textarea" placeholder=" "></textarea>
+          <span class="request__textareaLabel">Комментарий</span>
+        </label>
+        <label class="request__checkbox">
+          <input class="request__checkboxInput visuallyHidden" type="checkbox" name="agreement" value="true" />
+          <span class="request__checkboxIcon"></span>
+          <span class="request__checkboxLabel">Соглашаюсь с рассылкой и принимаю </span>
+          <a href="" class="request__checkboxLink">Условия договора</a>
+        </label>
+        <button type="submit" class="button">Отправить</button>
+        <button type="button" class="buttonClose" data-modal-close>
+          <svg width="18" height="18">
+            <use href="./images/sprite.svg#close-icon"></use>
+          </svg>
+        </button>
+      </form>
+    </div>
+    <iframe src="" frameborder="0"></iframe>
     <script src="./js/modal.js"></script>
   </body>
 </html>

@@ -66,6 +66,8 @@ img {
   line-height: 1.88;
 
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+
+  transition: color 250ms var(--cubic), background-color 250ms var(--cubic), fill 250ms var(--cubic);
 }
 
 .visuallyHidden {
@@ -162,6 +164,7 @@ img {
   border-radius: 2px;
   background-color: var(--acсent-color);
 }
+
 /* Auth nav */
 .authNav {
   display: flex;
@@ -222,7 +225,9 @@ img {
 
 .button:hover,
 .button:focus {
-  transform: scale(1.1);
+  color: var(--acсent-color);
+  background-color: var(--primary-background-color);
+  fill: var(--acсent-color);
 }
 
 .hero__title {
@@ -236,37 +241,6 @@ img {
   text-align: center;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-}
-
-/* Оформление модального окна */
-.backDrop {
-  position: fixed;
-  top: 0;
-  left: 0;
-
-  width: 100%;
-  height: 100%;
-
-  background-color: rgba(0, 0, 0, 0.2);
-}
-
-.backDrop--hidden {
-  opacity: 0;
-  pointer-events: none;
-}
-
-.modal {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-
-  min-width: 528px;
-  min-height: 581px;
-
-  background-color: var(--primary-background-color);
-  box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.2), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12);
-  border-radius: 4px;
 }
 
 /* Заголовки секций */
@@ -486,7 +460,6 @@ img {
   padding-bottom: 28px;
   margin-left: auto;
   margin-right: auto;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .address {
@@ -534,18 +507,235 @@ img {
 
 .button__icon {
   margin-left: 10px;
+  fill: var(--white-text-color);
+  transition: fill 250ms var(--cubic);
 }
 
-.copyright {
-  margin-top: 0;
-  margin-bottom: 0;
-  padding-top: 18px;
-  padding-bottom: 21px;
+.button:hover .button__icon {
+  fill: var(--acсent-color);
+}
+/* Оформление модального окна */
+.backDrop {
+  position: fixed;
+  top: 0;
+  left: 0;
 
+  width: 100%;
+  height: 100%;
+
+  background-color: rgba(0, 0, 0, 0.2);
+  opacity: 1;
+  transition: opacity 250ms var(--cubic);
+}
+
+.backDrop--hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.backDrop.backDrop--hidden .request {
+  transform: translate(-50%, -50%) scale(1.1);
+}
+
+/* Оформление формы */
+
+.request {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1);
+  transition: transform 250ms var(--cubic);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  min-width: 528px;
+  min-height: 581px;
+
+  padding-top: 40px;
+  padding-right: 40px;
+  padding-bottom: 40px;
+  padding-left: 40px;
+
+  background-color: var(--primary-background-color);
+  box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.2), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12);
+  border-radius: 4px;
+}
+
+.request__title {
+  margin-bottom: 30px;
+
+  font-size: 20px;
+  line-height: 1.15;
+}
+
+.request__field {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-bottom: 28px;
+}
+
+.request__input {
+  margin: 0;
+  padding-top: 12px;
+  padding-right: 45px;
+  padding-bottom: 12px;
+  padding-left: 45px;
+
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+}
+
+.request__label {
+  position: absolute;
+  top: 50%;
+  left: 45px;
+  transform: translateY(-50%);
+  transition: transform 250ms var(--cubic), color 250ms var(--cubic), font-size 250ms var(--cubic),
+    line-height 250ms var(--cubic);
+
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.01em;
+  color: var(--secondary-text-color);
+}
+
+.request__field:focus-within > .request__label,
+.request__input:not(:placeholder-shown) + .request__label {
+  transform: translateY(-40px) translateX(-25px);
   font-size: 12px;
-  line-height: 2;
-  text-align: center;
-  color: rgba(255, 255, 255, 0.4);
+  line-height: 1.17;
+}
+
+.request__field:focus-within > .request__label {
+  color: var(--acсent-color);
+}
+
+.request__icon {
+  position: absolute;
+  top: 50%;
+  left: 19px;
+  transform: translateY(-50%);
+  fill: var(--primary-text-color);
+  transition: fill 250ms var(--cubic);
+}
+
+.request__field:focus-within > .request__icon {
+  fill: var(--acсent-color);
+}
+
+.request__textareaField {
+  position: relative;
+  display: flex;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.request__textarea {
+  width: 100%;
+  height: 120px;
+  padding-top: 12px;
+  padding-right: 16px;
+  padding-bottom: 12px;
+  padding-left: 16px;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+  resize: none;
+}
+
+.request__textareaField:focus-within > .request__textareaLabel,
+.request__textarea:not(:placeholder-shown) + .request__textareaLabel {
+  transform: translateY(-30px) translateX(5px);
+  font-size: 12px;
+  line-height: 1.17;
+}
+
+.request__textareaField:focus-within > .request__textareaLabel {
+  color: var(--acсent-color);
+}
+
+.request__textareaLabel {
+  position: absolute;
+  top: 12px;
+  left: 16px;
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.01em;
+  color: var(--secondary-text-color);
+  transition: transform 250ms var(--cubic), color 250ms var(--cubic), font-size 250ms var(--cubic),
+    line-height 250ms var(--cubic);
+}
+
+/* Оформление CHECKBOX */
+
+.request__checkbox {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.request__checkboxInput:checked + .request__checkboxIcon {
+  border-color: var(--acсent-color);
+  background-image: url(/images/icon-check.svg);
+  background-color: var(--acсent-color);
+  background-size: contain;
+  background-origin: border-box;
+}
+
+/* .request__checkboxInput {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  position: absolute;
+} */
+
+.request__checkboxIcon {
+  display: inline-block;
+  width: 16px;
+  height: 15px;
+  margin-right: 8px;
+  border: 2px solid #212121;
+  border-radius: 2px;
+}
+
+.request__checkboxLabel {
+  margin-right: 5px;
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--secondary-text-color);
+}
+
+.request__checkboxLink {
+  color: var(--acсent-color);
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+/* Оформления кнопки закрытия модального окна */
+
+.buttonClose {
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translateX(-8px) translateY(8px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  background: var(--primary-background-color);
+  fill: #000;
+  transition: border-color 250ms var(--cubic), fill 250ms var(--cubic);
+}
+
+.buttonClose:hover {
+  border-color: var(--acсent-color);
+  fill: var(--acсent-color);
 }
 
 /* Оформление страницы Portfolio */
@@ -597,6 +787,7 @@ img {
   display: flex;
   flex-wrap: wrap;
 }
+
 .cardSet__item {
   width: calc((100% - 60px) / 3);
   border-radius: 5px;
