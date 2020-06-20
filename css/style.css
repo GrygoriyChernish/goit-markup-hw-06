@@ -514,6 +514,7 @@ img {
 .button:hover .button__icon {
   fill: var(--acсent-color);
 }
+
 /* Оформление модального окна */
 .backDrop {
   position: fixed;
@@ -603,14 +604,14 @@ img {
   color: var(--secondary-text-color);
 }
 
-.request__field:focus-within > .request__label,
-.request__input:not(:placeholder-shown) + .request__label {
+.request__field:focus-within>.request__label,
+.request__input:not(:placeholder-shown)+.request__label {
   transform: translateY(-40px) translateX(-25px);
   font-size: 12px;
   line-height: 1.17;
 }
 
-.request__field:focus-within > .request__label {
+.request__field:focus-within>.request__label {
   color: var(--acсent-color);
 }
 
@@ -623,7 +624,7 @@ img {
   transition: fill 250ms var(--cubic);
 }
 
-.request__field:focus-within > .request__icon {
+.request__field:focus-within>.request__icon {
   fill: var(--acсent-color);
 }
 
@@ -646,14 +647,14 @@ img {
   resize: none;
 }
 
-.request__textareaField:focus-within > .request__textareaLabel,
-.request__textarea:not(:placeholder-shown) + .request__textareaLabel {
+.request__textareaField:focus-within>.request__textareaLabel,
+.request__textarea:not(:placeholder-shown)+.request__textareaLabel {
   transform: translateY(-30px) translateX(5px);
   font-size: 12px;
   line-height: 1.17;
 }
 
-.request__textareaField:focus-within > .request__textareaLabel {
+.request__textareaField:focus-within>.request__textareaLabel {
   color: var(--acсent-color);
 }
 
@@ -677,7 +678,7 @@ img {
   margin-bottom: 30px;
 }
 
-.request__checkboxInput:checked + .request__checkboxIcon {
+.request__checkboxInput:checked+.request__checkboxIcon {
   border-color: var(--acсent-color);
   background-image: url(../images/icon-check.svg);
   background-color: var(--acсent-color);
